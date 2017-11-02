@@ -1,0 +1,8 @@
+{
+    "name": "segundo_ejercicio",
+    "version": "1.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "flotante",
+    "contributors": [],
+    "dependencies": {}
+}

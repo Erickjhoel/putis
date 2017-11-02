@@ -1,0 +1,70 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26-oct-2017, 9:35:41
+    Author     : flotante
+*/
+p{
+    color: yellow;
+
+}
+body {
+    color :black;
+
+}
+
+table{
+    width:100%;
+    height:300px;
+    border:dotted ;
+    padding:0;
+
+
+}
+td{
+    background-color:0;
+    border-bottom-color:0;
+    border-bottom-width:0;
+    border-bottom-style:0;
+    border-bottom-right-radius: 0;
+    padding:0;
+    text-align: center;
+    vertical-align: top;
+    font-size:20px;
+    font-style: italic;
+}
+
+    
+
+/*   estilos para el menu */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: pink;
+}
+
+li {
+   float: center;
+}
+
+li a {
+    display: block;
+    color: yellow;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: darkred;
+}
+
+li a.active{
+    background-color: green;
+}
