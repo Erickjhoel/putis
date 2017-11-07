@@ -12,7 +12,7 @@ body {
 
 }
 
-table{
+table.t1{
     width:90%;
     height:300px;
     border:dotted 2px;
@@ -28,10 +28,20 @@ td.a{
 tr.a1{
     background-color: black;
     height:3px;
-    
 }
-
-    
+table.t2{
+    width:70%;
+    height:300px;
+    border: solid 1px;
+    border-color:black;
+    padding:0px;
+  }
+  td.b1{
+    border: solid 1px;
+  } 
+  th.b{
+      border: solid 1px;
+  }
 
 /*   estilos para el menu */
 ul {
