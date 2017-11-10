@@ -106,33 +106,67 @@ public class ErickEjerciciosArray {
         }
     }
 
-    public static void ejercicio3(Scanner sc){
-        int contadorp=0;
-        int contadorn=0;
-        int sumasp=0;
-        int sumasn=0;
-         int numeros[] = new int[5];
+    public static void ejercicio3(Scanner sc) {
+        int contadorp = 0;
+        int contadorn = 0;
+        int sumasp = 0;
+        int sumasn = 0;
+        int contador0 = 0;
+        int sumas0 = 0;
+        int numeros[] = new int[5];
         for (int i = 0; i < numeros.length; i++) {
             System.out.println("Introduzca 5 numeros");
             numeros[i] = sc.nextInt();
         }
         for (int i = 0; i < numeros.length; i++) {
-        if(numeros[i]>0){
-            contadorp++;
-           sumasp= sumasp +numeros[i];
-           }else{
-            contadorn++;
-           sumasn= sumasn+numeros[i];
-           }
+            if (numeros[i] > 0) {
+                contadorp++;
+                sumasp = sumasp + numeros[i];
+            } else if (numeros[i] < 0) {
+                contadorn++;
+                sumasn = sumasn + numeros[i];
+            } else {
+                contador0++;
+                sumas0 = sumas0 + numeros[i];
+            }
         }
-         int mediap= sumasp/contadorp;
-         int median= sumasn/contadorn;
-         if(contadorn==0){
-             System.out.println("La media negativa es 0");}
-         
-        System.out.println("La media de numeros positivos son" + mediap);
-        System.out.println("La media de numeros negativos son" + median);
+        int median = sumasn / contadorn;
+        int mediap = sumasp / contadorp;
+        int media0 = 0;
+        if (contador0 == 5) {
+            System.out.println("El numero de 0 es:" + contador0);
+        }
+        if (contadorn == 0) {
+            System.out.println("Es imposible dividir entre 0");
+        }
+        if (contadorp == 0) {
+            System.out.println("Es imposible dividir entre 0");
+        } else {
+            System.out.println("La media de positivos es:" + mediap);
+            System.out.println("La media de negativos es:" + median);
+            System.out.println("La media de 0 es:" + media0);
         }
     }
 
+    public static void ejercicio4(Scanner sc) {
+        int numeros[] = new int[10];
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.println("Introduzca los numeros");
+            numeros[i] = sc.nextInt();
+        }
 
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Los numeros son:" + numeros[i]);
+            System.out.println("Los numeros son:" + numeros[numeros.length - 1 - i]);
+        }
+
+    }
+
+    public static void ejercicio5(Scanner sc) {
+        int numeros1[] = new int[10];
+        for (int i= 0; i<numeros1.length; i++){
+            
+        }
+
+    }
+}
