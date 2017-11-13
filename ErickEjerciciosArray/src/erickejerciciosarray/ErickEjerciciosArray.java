@@ -163,10 +163,55 @@ public class ErickEjerciciosArray {
     }
 
     public static void ejercicio5(Scanner sc) {
+        //primer array*/
         int numeros1[] = new int[10];
-        for (int i= 0; i<numeros1.length; i++){
-            
+        for (int i = 0; i < numeros1.length; i++) {
+            System.out.println("Introduzca 10 numeros");
+            numeros1[i] = sc.nextInt();
+        }
+        //segundo array*/
+        int numeros2[] = new int[10];
+        for (int i = 0; i < numeros2.length; i++) {
+            System.out.println("Introduzca otros 10 numeros");
+            numeros2[i] = sc.nextInt();
+        }
+        //mezcla de arrays*/
+        int mezcla[] = new int[20];
+        for (int i = 0; i < 10; i++) {
+            mezcla[i + i] = numeros1[i];
+        }
+        for (int i = 0; i < 10; i++) {
+            mezcla[i + 1 + i] = numeros2[i];
+        }
+        //sacar por pantalla*/
+        for (int i = 0; i < mezcla.length; i++) {
+            System.out.println("Los numeros son:" + mezcla[i]);
         }
 
+    }
+    public static void ejercicio6(Scanner sc) {
+        int numeros1[] = new int[12];
+        for (int i = 0; i < numeros1.length; i++) {
+            System.out.println("Introduzca 10 numeros");
+            numeros1[i] = sc.nextInt();
+        }
+        //segundo array*/
+        int numeros2[] = new int[12];
+        for (int i = 0; i < numeros2.length; i++) {
+            System.out.println("Introduzca otros 10 numeros");
+            numeros2[i] = sc.nextInt();
+        }
+        //mezcla de arrays*/
+        int mezcla[] = new int[8];
+        for (int i = 0; i < 4; i++) {
+            mezcla[i + i] = numeros1[i+2+i+i];
+        }
+        for (int i = 0; i < 4; i++) {
+            mezcla[i + 1 + i] = numeros2[i+2+i+i];
+        }
+        //sacar por pantalla*/
+        for (int i = 0; i < mezcla.length; i++) {
+            System.out.println("Los numeros son:" + mezcla[i]);
+        }
     }
 }
