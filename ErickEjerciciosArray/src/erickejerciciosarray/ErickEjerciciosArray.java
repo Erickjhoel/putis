@@ -214,4 +214,14 @@ public class ErickEjerciciosArray {
             System.out.println("Los numeros son:" + mezcla[i]);
         }
     }
+     public static void ejercicio7(Scanner sc) {
+         int numeros[] = new int[10];
+          for (int i = 0; i < numeros.length; i++) {
+            System.out.println("Introduzca 10 numeros en cualquier orden");
+            numeros[i] = sc.nextInt();
+          }
+          if (numeros[i]= numeros[i++]){
+          
+          }
+     }
 }
