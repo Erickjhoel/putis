@@ -48,33 +48,7 @@ public class ErickEjerciciosArray {
             case 8:
                 ejercicio8(sc);
                 break;
-            case 9:
-                ejercicio9(sc);
-                break;
-            case 10:
-                ejercicio10(sc);
-                break;
-            case 11:
-                ejercicio11(sc);
-                break;
-            case 12:
-                ejercicio12(sc);
-                break;
-            case 13:
-                ejercicio13(sc);
-                break;
-            case 14:
-                ejercicio14(sc);
-                break;
-            case 15:
-                ejercicio15(sc);
-                break;
-            case 16:
-                ejercicio16(sc);
-                break;
-            case 17:
-                ejercicio17(sc);
-                break;
+
             default:
                 System.out.println("opcion no valida");
         }
@@ -189,6 +163,7 @@ public class ErickEjerciciosArray {
         }
 
     }
+
     public static void ejercicio6(Scanner sc) {
         int numeros1[] = new int[12];
         for (int i = 0; i < numeros1.length; i++) {
@@ -204,24 +179,54 @@ public class ErickEjerciciosArray {
         //mezcla de arrays*/
         int mezcla[] = new int[8];
         for (int i = 0; i < 4; i++) {
-            mezcla[i + i] = numeros1[i+2+i+i];
+            mezcla[i + i] = numeros1[i + 2 + i + i];
         }
         for (int i = 0; i < 4; i++) {
-            mezcla[i + 1 + i] = numeros2[i+2+i+i];
+            mezcla[i + 1 + i] = numeros2[i + 2 + i + i];
         }
         //sacar por pantalla*/
         for (int i = 0; i < mezcla.length; i++) {
             System.out.println("Los numeros son:" + mezcla[i]);
         }
     }
-     public static void ejercicio7(Scanner sc) {
-         int numeros[] = new int[10];
-          for (int i = 0; i < numeros.length; i++) {
+
+    public static void ejercicio7(Scanner sc) {
+        int numeros[] = new int[10];
+        boolean creciente;
+        boolean decreciente;
+        creciente = false;
+        decreciente = false;
+        for (int i = 0; i < numeros.length; i++) {
             System.out.println("Introduzca 10 numeros en cualquier orden");
             numeros[i] = sc.nextInt();
-          }
-          if (numeros[i]= numeros[i++]){
-          
-          }
-     }
+        }
+        for (int i = 0; i < numeros.length; i++) {
+            if (numeros[i] > numeros[i + 1]) {
+                decreciente = true;
+            }
+            if (numeros[i] < numeros[i + 1]) {
+                creciente = true;
+            }
+
+        }
+
+        if (creciente == false && decreciente == true) {
+            System.out.println("Los numeros estan ordenados de manera decreciente.");
+        }
+        if (creciente == true && decreciente == false) {
+            System.out.println("Los numeros estan ordenados de manera creciente");
+        }
+        if (creciente == true && decreciente == true) {
+            System.out.println("Los numeros están desordenados");
+        }
+    }
+    public static void ejercicio8(Scanner sc) {
+        int tabla[]= new int [10];
+        
+        for(int i=0; i<8; i++){
+            System.out.println("Introduzca 8 numeros");
+            tabla[i]= sc.nextInt();
+        }
+        
+    }
 }
