@@ -48,6 +48,9 @@ public class ErickEjerciciosArray {
             case 8:
                 ejercicio8(sc);
                 break;
+            case 9:
+                ejercicio9(sc);
+                break;
 
             default:
                 System.out.println("opcion no valida");
@@ -200,6 +203,7 @@ public class ErickEjerciciosArray {
             System.out.println("Introduzca 10 numeros en cualquier orden");
             numeros[i] = sc.nextInt();
         }
+        //tener en cuenta que el numero no sobrepase el array*/
         for (int i = 0; i < 9; i++) {
             if (numeros[i] > numeros[i + 1]) {
                 decreciente = true;
@@ -231,12 +235,39 @@ public class ErickEjerciciosArray {
             numeros[i] = sc.nextInt();
         }
         System.out.println("Introduzca una posicion");
-        posicion=sc.nextInt();
-        for (int i = 0; numeros[i]==0; i++  ) {
-            posicion=posicion++;
-        }
+        posicion = sc.nextInt();
         System.out.println("Introduzca un numero");
-        num=sc.nextInt();
-        System.out.println("El numero "+numeros[num]+"se encuentra en la posicion"+num);
+        num = sc.nextInt();
+        for (int i = 0; numeros[i] == 0; i++) {
+            posicion = posicion++;
+        }
+        for (int i = 7; i >= posicion; i--) {
+            numeros[i + 1] = numeros[i];
+        }
+        numeros[posicion] = num;
+        System.out.println("El nuevo orden de la tabla es:");
+        for (int i = 0; i < 9; i++) {
+            System.out.println(numeros[i]);
+        }
+
+    }
+
+    public static void ejercicio9(Scanner sc) {
+        int tabla[] = new int[10];
+        int numf;
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Introduzca un numero");
+            tabla[i] = sc.nextInt();
+        }
+        //MANERA DE GUARDAR NUMERO!!!*/
+        numf = tabla[10];
+        for (int i = 0; i >= 10; i++) {
+            tabla[i - 1] = tabla[i];
+        }
+        tabla[0] = numf;
+        for (int i = 0; i < 10; i--) {
+            System.out.println(tabla[i]);
+        }
     }
 }
+
