@@ -200,10 +200,11 @@ public class ErickEjerciciosArray {
             System.out.println("Introduzca 10 numeros en cualquier orden");
             numeros[i] = sc.nextInt();
         }
-        for (int i = 0; i < numeros.length; i++) {
+        for (int i = 0; i < 9; i++) {
             if (numeros[i] > numeros[i + 1]) {
                 decreciente = true;
             }
+
             if (numeros[i] < numeros[i + 1]) {
                 creciente = true;
             }
@@ -220,13 +221,22 @@ public class ErickEjerciciosArray {
             System.out.println("Los numeros están desordenados");
         }
     }
+
     public static void ejercicio8(Scanner sc) {
-        int tabla[]= new int [10];
-        
-        for(int i=0; i<8; i++){
+        int numeros[] = new int[10];
+        int posicion;
+        int num;
+        for (int i = 0; i < 8; i++) {
             System.out.println("Introduzca 8 numeros");
-            tabla[i]= sc.nextInt();
+            numeros[i] = sc.nextInt();
         }
-        
+        System.out.println("Introduzca una posicion");
+        posicion=sc.nextInt();
+        for (int i = 0; numeros[i]==0; i++  ) {
+            posicion=posicion++;
+        }
+        System.out.println("Introduzca un numero");
+        num=sc.nextInt();
+        System.out.println("El numero "+numeros[num]+"se encuentra en la posicion"+num);
     }
 }
