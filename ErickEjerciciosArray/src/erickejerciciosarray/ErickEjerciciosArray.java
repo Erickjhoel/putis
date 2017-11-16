@@ -51,6 +51,12 @@ public class ErickEjerciciosArray {
             case 9:
                 ejercicio9(sc);
                 break;
+            case 10:
+                ejercicio10(sc);
+                break;
+            case 11:
+                ejercicio10(sc);
+                break;
 
             default:
                 System.out.println("opcion no valida");
@@ -259,15 +265,51 @@ public class ErickEjerciciosArray {
             System.out.println("Introduzca un numero");
             tabla[i] = sc.nextInt();
         }
+
         //MANERA DE GUARDAR NUMERO!!!*/
-        numf = tabla[10];
-        for (int i = 0; i >= 10; i++) {
-            tabla[i - 1] = tabla[i];
+        numf = tabla[9];
+        for (int i = 0; i < 9; i++) {
+            tabla[9 - i] = tabla[8 - i];
         }
         tabla[0] = numf;
-        for (int i = 0; i < 10; i--) {
+        System.out.println("El nuevo orden de la tabla es:");
+        for (int i = 0; i < tabla.length; i++) {
             System.out.println(tabla[i]);
         }
     }
-}
 
+    public static void ejercicio10(Scanner sc) {
+        int tabla[] = new int[10];
+        int n;
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Introduzca un numero");
+            tabla[i] = sc.nextInt();
+        }
+
+        //MANERA DE GUARDAR NUMERO!!!*/
+        System.out.println("Introduzca numeros a desplazar");
+        n = sc.nextInt();
+        int d;
+        for (int i = 0; i < n; i++) {
+        }
+        for (int i = 0; i < 9; i++) {
+            tabla[9 - i] = tabla[8 - i];
+        }
+        d = tabla[9];
+        tabla[0] = d;
+        System.out.println("El nuevo orden de la tabla es:");
+        for (int i = 0; i < tabla.length; i++) {
+            System.out.println(tabla[i]);
+        }
+    }
+    public static void ejercicio11(Scanner sc) {
+        int tabla[]= new int [10];
+        int
+        for (int i=0; i<5; i++)
+        
+        
+        
+    
+    }
+}
