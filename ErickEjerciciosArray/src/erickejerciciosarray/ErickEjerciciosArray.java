@@ -55,7 +55,7 @@ public class ErickEjerciciosArray {
                 ejercicio10(sc);
                 break;
             case 11:
-                ejercicio10(sc);
+                ejercicio11(sc);
                 break;
 
             default:
@@ -252,7 +252,7 @@ public class ErickEjerciciosArray {
         }
         numeros[posicion] = num;
         System.out.println("El nuevo orden de la tabla es:");
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 10; i++) {
             System.out.println(numeros[i]);
         }
 
@@ -287,7 +287,6 @@ public class ErickEjerciciosArray {
             tabla[i] = sc.nextInt();
         }
 
-        //MANERA DE GUARDAR NUMERO!!!*/
         System.out.println("Introduzca numeros a desplazar");
         n = sc.nextInt();
         int d;
@@ -303,18 +302,45 @@ public class ErickEjerciciosArray {
             System.out.println(tabla[i]);
         }
     }
+
     public static void ejercicio11(Scanner sc) {
-        int numeros[]= new int [10];
+        int numeros[] = new int[10];
         System.out.println("Introduzca 5 numeros de manera creciente");
-        for (int i=0; i<10; i++){
-            numeros[i]=sc.nextInt();
+        for (int i = 0; i < 5; i++) {
+            numeros[i] = sc.nextInt();
         }
-        System.out.println("Introduce un numero")
-        if(numeros[4]<)
-        
-        
-        
-        
-    
+        int n;
+        System.out.println("Introduce un numero");
+        n = sc.nextInt();
+        for (int a = 0; a < 5; a++) {
+            if (numeros[4] < n) {
+                numeros[5] = n;
+                break;
+            }
+            if (numeros[0] > n) {
+                
+                for (int b = 0; b <5; b++) {
+                    
+                    numeros[5 -b] = numeros[4 - b];
+                }
+                numeros[0] = n;
+            break;}
+            if (numeros[a] < n && numeros[a + 1] > n);
+            {
+
+                for (int b = 0; b < 5; b++) {
+
+                    numeros[6 - b] = numeros[5 - b];
+
+                }
+                numeros[a + 1] = n;
+
+            }
+        }
+        System.out.println("la nueva orden de la tabla es:");
+        for (int a = 0; a < numeros.length; a++) {
+            System.out.println(numeros[a]);
+        }
+
     }
 }
