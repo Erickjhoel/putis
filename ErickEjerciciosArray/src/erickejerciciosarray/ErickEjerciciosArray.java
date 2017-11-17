@@ -304,9 +304,14 @@ public class ErickEjerciciosArray {
         }
     }
     public static void ejercicio11(Scanner sc) {
-        int tabla[]= new int [10];
-        int
-        for (int i=0; i<5; i++)
+        int numeros[]= new int [10];
+        System.out.println("Introduzca 5 numeros de manera creciente");
+        for (int i=0; i<10; i++){
+            numeros[i]=sc.nextInt();
+        }
+        System.out.println("Introduce un numero")
+        if(numeros[4]<)
+        
         
         
         
