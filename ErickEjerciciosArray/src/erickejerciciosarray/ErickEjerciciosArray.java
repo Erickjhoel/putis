@@ -6,6 +6,7 @@
 package erickejerciciosarray;
 
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  *
@@ -34,60 +35,70 @@ public class ErickEjerciciosArray {
                 + "\n Opcion 14:Fusionar dos tablas de manera que continuen ordenadas"
                 + "\n Opcion 15:Buscar un numero en una tabla"
                 + "\n Opcion 16:Aplicacion de centro educativo"
-                + "\n Opcion 17:Baraja de cartas\n");
+                + "\n Opcion 17:Baraja de cartas"
+                + "\n Opcion18:Salir\n");
         int opcion = sc.nextInt();
-        switch (opcion) {
-            case 1:
-                ejercicio1(sc);
-                break;
-            case 2:
-                ejercicio2(sc);
-                break;
-            case 3:
-                ejercicio3(sc);
-                break;
-            case 4:
-                ejercicio4(sc);
-                break;
-            case 5:
-                ejercicio5(sc);
-                break;
-            case 6:
-                ejercicio6(sc);
-                break;
-            case 7:
-                ejercicio7(sc);
-                break;
-            case 8:
-                ejercicio8(sc);
-                break;
-            case 9:
-                ejercicio9(sc);
-                break;
-            case 10:
-                ejercicio10(sc);
-                break;
-            case 11:
-                ejercicio11(sc);
-                break;
-            case 12:
-                ejercicio12(sc);
-                break;
-            case 13:
-                ejercicio13(sc);
-                break;
-            case 14:
-                ejercicio14(sc);
-                break;
-            case 15:
-                ejercicio15(sc);
-                break;
-            case 16:
-                ejercicio16(sc);
-                break;
+        int salir = 0;
+        while (salir != 1) {
+            switch (opcion) {
+                case 1:
+                    ejercicio1(sc);
+                    break;
+                case 2:
+                    ejercicio2(sc);
+                    break;
+                case 3:
+                    ejercicio3(sc);
+                    break;
+                case 4:
+                    ejercicio4(sc);
+                    break;
+                case 5:
+                    ejercicio5(sc);
+                    break;
+                case 6:
+                    ejercicio6(sc);
+                    break;
+                case 7:
+                    ejercicio7(sc);
+                    break;
+                case 8:
+                    ejercicio8(sc);
+                    break;
+                case 9:
+                    ejercicio9(sc);
+                    break;
+                case 10:
+                    ejercicio10(sc);
+                    break;
+                case 11:
+                    ejercicio11(sc);
+                    break;
+                case 12:
+                    ejercicio12(sc);
+                    break;
+                case 13:
+                    ejercicio13(sc);
+                    break;
+                case 14:
+                    ejercicio14(sc);
+                    break;
+                case 15:
+                    ejercicio15(sc);
+                    break;
+                case 16:
+                    ejercicio16(sc);
+                    break;
+                case 17:
+                    ejercicio17(sc);
+                    break;
+                case 18:
+                    salir = 1;
+                    break;
 
-            default:
-                System.out.println("opcion no valida");
+                default:
+                    System.out.println("opcion no valida");
+            }
         }
     }
 
@@ -410,10 +421,39 @@ public class ErickEjerciciosArray {
     }
 
     public static void ejercicio14(Scanner sc) {
-        
+        int numeros1[]= new int[10];
+        int numeros2[]=new int[10];
+        System.out.println("Introuzca 10 numeros de manera creciente:");
+        for(int i=0; i<numeros1.length;i++){
+            numeros1[i]=sc.nextInt();
+        }
+        System.out.println("Introuzca  otros 10 numeros de manera creciente:");
+        for(int i=0; i<numeros2.length;i++){
+            numeros2[i]=sc.nextInt();
+        }
+        int numeros3[] = new int[20];
+        for (int i = 0; i < 10; i++) {
+            if (numeros1[i] < numeros2[i]) {
+                numeros3[i + i] = numeros1[i];
+                numeros3[i + 1 + i] = numeros2[i];
+            }
+            if (numeros1[i] > numeros2[i]) {
+                numeros3[i + i] = numeros2[i];
+                numeros3[i + 1 + i] = numeros1[i];
+            }
+            if (numeros1[i] == numeros2[i]) {
+                numeros3[i + i] = numeros1[i];
+                numeros3[i + 1 + i] = numeros2[i];
+            }
+        }
+        System.out.println("La tabla queda ");
+        for (int i = 0; i < numeros3.length; i++) {
+            System.out.println(numeros3[i]);
+        }
     }
 
-    public static void ejercicio15(Scanner sc) {
+
+public static void ejercicio15(Scanner sc) {
         int tabla[] = new int[10];
         int num;
         int posicion;
@@ -462,18 +502,72 @@ public class ErickEjerciciosArray {
             tri3[i] = sc.nextInt();
         }
         for (int i = 0; i < 5; i++) {
-            primero = primero+tri1[i];
-            
-            segundo= segundo+tri2[i];
-            
-            tercero=tercero+tri3[i];
+            primero = primero + tri1[i];
+
+            segundo = segundo + tri2[i];
+
+            tercero = tercero + tri3[i];
         }
-        System.out.println("Media del primer trimestre: " + primero / 5);
-        System.out.println("Media del segundo trimestre: " + segundo / 5);
-        System.out.println("Media del tercer timestre: " + tercero / 5);
-        System.out.print("Introduzca la posicion del alumno que quiere saber la media ");
+        System.out.println("\n Media del primer trimestre: " + primero / 5
+                + "\n Media del segundo trimestre: " + segundo / 5
+                + "\n Media del tercer timestre:" + tercero / 5);
+        System.out.print("Introduzca la posicion del alumno que quiere saber la media");
         int num = sc.nextInt();
         media = (tri1[num] + tri2[num] + tri3[num]) / 3;
         System.out.println("La media del alumno es:" + media);
     }
+
+    public static void ejercicio17(Scanner sc) {
+        Scanner scanner = new Scanner(System.in);
+        //inicializa dos array de 10 cartas
+        int[] mazo = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] mazo2 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        //inicializa una array de 10 cartas
+        //barajea los mazos
+        barajarArray(mazo);
+        barajarArray(mazo2);
+        //ir sacando una a una las cartas y comparandolas a ver quien gana
+        int ca1 = 0;
+        int ca2 = 0;
+        for (int i = 0; i < mazo.length; i++) {
+            if (mazo2[i] > mazo[i]) {
+                ca2++;
+            }
+        }
+        for (int i = 0; i < mazo2.length; i++) {
+            if (mazo2[i] < mazo[i]) {
+                ca1++;
+            }
+        }
+        //ir sacando una a una las cartas y comparandolas a ver quien gana
+        //sacar el ganador.
+        int cartamen;
+        System.out.println("Eligue una carta del 1 al 10");
+
+        cartamen = sc.nextInt();
+
+        if (ca2 > ca1) {
+            System.out.println("Has ganado!! " + cartamen);
+        } else {
+            System.out.println("Has perdido:´( " + cartamen + " a ganado la maquina");
+        }
+
+    }
+
+    public static void barajarArray(int[] array) {
+        Random generadorNumerosAleatorios = new Random();
+        int posicion;
+        int posicion2;
+        int swap;
+
+        for (int i = 0; i < 20; i++) {
+            posicion = generadorNumerosAleatorios.nextInt(array.length);
+            posicion2 = generadorNumerosAleatorios.nextInt(array.length);
+            swap = array[posicion];
+            array[posicion] = array[posicion2];
+            array[posicion2] = swap;
+        }
+
+    }
+
 }
