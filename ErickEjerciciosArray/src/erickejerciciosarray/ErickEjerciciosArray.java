@@ -18,10 +18,23 @@ public class ErickEjerciciosArray {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("\n Opcion 1" + "\n Opcion 2" + "\n Opcion 3" + "\n Opcion 4" + "\n Opcion 5"
-                + "\n Opcion 6" + "\n Opcion 7" + "\n Opcion 8" + "\n Opcion 9" + "\n Opcion 10"
-                + "\n Opcion 11" + "\n Opcion 12" + "\n Opcion 13" + "\n Opcion 14" + "\n Opcion 15"
-                + "\n Opcion 16" + "\n Opcion 17\n");
+        System.out.print("\n Opcion 1:Leer 5 numeros de la manera introducida"
+                + "\n Opcion 2:Leer 5 numeros de manera inversa"
+                + "\n Opcion 3:Media positivos,negativos y contador de 0"
+                + "\n Opcion 4:Leer 10 numeros de la siguiente orden:el primero,el último,el segundo,el penúltimo,etc"
+                + "\n Opcion 5:Leer 10 numeros:el 1º de A, el 1º de B, el 2º de A, el 2º de B, etc"
+                + "\n Opcion 6:Mesclar dos tablas:3 de la tabla A, 3 de la B, otros 3 de A, otros 3 de la B, etc. "
+                + "\n Opcion 7:Indicar si los numeros estan ordenados de manera creciente, decreciente o desordenados"
+                + "\n Opcion 8:Insertar un numero en la tabla desplazando los que estan detras"
+                + "\n Opcion 9:Desplazar una posicion hacia abajo colocando el ultimo como primero"
+                + "\n Opcion 10:Desplazar las posiciones que sean introducidas"
+                + "\n Opcion 11:Insertar un numero de manera que la tabla continue estando ordenada de manera creciente"
+                + "\n Opcion 12:Eliminar elemento sin dejar huecos"
+                + "\n Opcion 13:Trabajar con valores y con indices"
+                + "\n Opcion 14:Fusionar dos tablas de manera que continuen ordenadas"
+                + "\n Opcion 15:Buscar un numero en una tabla"
+                + "\n Opcion 16:Aplicacion de centro educativo"
+                + "\n Opcion 17:Baraja de cartas\n");
         int opcion = sc.nextInt();
         switch (opcion) {
             case 1:
@@ -56,6 +69,21 @@ public class ErickEjerciciosArray {
                 break;
             case 11:
                 ejercicio11(sc);
+                break;
+            case 12:
+                ejercicio12(sc);
+                break;
+            case 13:
+                ejercicio13(sc);
+                break;
+            case 14:
+                ejercicio14(sc);
+                break;
+            case 15:
+                ejercicio15(sc);
+                break;
+            case 16:
+                ejercicio16(sc);
                 break;
 
             default:
@@ -281,22 +309,23 @@ public class ErickEjerciciosArray {
     public static void ejercicio10(Scanner sc) {
         int tabla[] = new int[10];
         int n;
-
+        int d;
         for (int i = 0; i < 10; i++) {
-            System.out.println("Introduzca un numero");
+            System.out.println("Introduzca Diez numeros");
             tabla[i] = sc.nextInt();
         }
 
         System.out.println("Introduzca numeros a desplazar");
         n = sc.nextInt();
-        int d;
+
         for (int i = 0; i < n; i++) {
+            d = tabla[9];
+            for (int a = 0; a < 9; a++) {
+                tabla[9 - a] = tabla[8 - a];
+            }
+            tabla[0] = d;
+
         }
-        for (int i = 0; i < 9; i++) {
-            tabla[9 - i] = tabla[8 - i];
-        }
-        d = tabla[9];
-        tabla[0] = d;
         System.out.println("El nuevo orden de la tabla es:");
         for (int i = 0; i < tabla.length; i++) {
             System.out.println(tabla[i]);
@@ -318,29 +347,133 @@ public class ErickEjerciciosArray {
                 break;
             }
             if (numeros[0] > n) {
-                
-                for (int b = 0; b <5; b++) {
-                    
-                    numeros[5 -b] = numeros[4 - b];
+                int x = 5 - a;
+                for (int b = 0; b < x; b++) {
+
+                    numeros[5 - b] = numeros[4 - b];
                 }
                 numeros[0] = n;
-            break;}
-            if (numeros[a] < n && numeros[a + 1] > n);
-            {
+                break;
+            }
+            if (numeros[a] < n && numeros[a + 1] > n) {
+                int x = 5 - a;
+                for (int b = 0; b < x; b++) {
 
-                for (int b = 0; b < 5; b++) {
-
-                    numeros[6 - b] = numeros[5 - b];
-
+                    numeros[5 - b] = numeros[4 - b];
                 }
                 numeros[a + 1] = n;
-
+                break;
             }
+            if (numeros[a] == n) {
+                int x = 5 - a;
+                for (int b = 0; b < x; b++) {
+                    numeros[5 - b] = numeros[4 - b];
+                }
+                numeros[a + 1] = n;
+                break;
+            }
+
         }
         System.out.println("la nueva orden de la tabla es:");
-        for (int a = 0; a < numeros.length; a++) {
-            System.out.println(numeros[a]);
+        for (int c = 0; c < numeros.length; c++) {
+            System.out.println(numeros[c]);
         }
 
+    }
+
+    public static void ejercicio12(Scanner sc) {
+        int numeros[] = new int[10];
+        int posicion;
+        //pedir 10 numeros
+        System.out.println("Introduzca 10 numeros");
+        for (int i = 0; i < 10; i++) {
+            numeros[i] = sc.nextInt();
+        }
+        //eleguir posicion a eliminar
+        System.out.println("Introduzca la posicion a eliminar de 0 a 9");
+        posicion = sc.nextInt();
+        //elimiar posicion y mover array
+        for (int i = posicion; i < 9; i++) {
+            numeros[i] = numeros[i + 1];
+
+            //sacar por pantalla final
+        }
+        System.out.println("la nueva orden de la tabla es:");
+        for (int c = 0; c < 9; c++) {
+            System.out.println(numeros[c]);
+        }
+
+    }
+
+    public static void ejercicio13(Scanner sc) {
+
+    }
+
+    public static void ejercicio14(Scanner sc) {
+        
+    }
+
+    public static void ejercicio15(Scanner sc) {
+        int tabla[] = new int[10];
+        int num;
+        int posicion;
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Introduzca 10 numeros de manera creciente");
+            tabla[i] = sc.nextInt();
+        }
+        System.out.println("Introduzca el numero que busca ");
+        num = sc.nextInt();
+        posicion = 0;
+        while (posicion < 10 && tabla[posicion] < num) {
+            posicion++;
+        }
+        if (posicion >= 10) {
+            System.out.println("El numero fuera de la tabla");
+        } else {
+            if (tabla[posicion] == num) {
+                System.out.println("El numero se ncuentra en la posicion:" + posicion);
+            } else {
+                System.out.println("El numero no se encuentra dentro de la tabla");
+            }
+        }
+    }
+
+    public static void ejercicio16(Scanner sc) {
+        int tri1[] = new int[5];
+        int tri2[] = new int[5];
+        int tri3[] = new int[5];
+        int primero = 0;
+        int segundo = 0;
+        int tercero = 0;
+        int media;
+        System.out.println("Notas de primer trimestre:");
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Alumno " + i);
+            tri1[i] = sc.nextInt();
+        }
+        System.out.println("Notas del segundo trimestre:");
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Alumno" + i);
+            tri2[i] = sc.nextInt();
+        }
+        System.out.println("Notas del tercer trimestre:");
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Alumnos " + i);
+            tri3[i] = sc.nextInt();
+        }
+        for (int i = 0; i < 5; i++) {
+            primero = primero+tri1[i];
+            
+            segundo= segundo+tri2[i];
+            
+            tercero=tercero+tri3[i];
+        }
+        System.out.println("Media del primer trimestre: " + primero / 5);
+        System.out.println("Media del segundo trimestre: " + segundo / 5);
+        System.out.println("Media del tercer timestre: " + tercero / 5);
+        System.out.print("Introduzca la posicion del alumno que quiere saber la media ");
+        int num = sc.nextInt();
+        media = (tri1[num] + tri2[num] + tri3[num]) / 3;
+        System.out.println("La media del alumno es:" + media);
     }
 }
