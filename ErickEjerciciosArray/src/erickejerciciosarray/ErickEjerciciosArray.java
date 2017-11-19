@@ -35,71 +35,64 @@ public class ErickEjerciciosArray {
                 + "\n Opcion 14:Fusionar dos tablas de manera que continuen ordenadas"
                 + "\n Opcion 15:Buscar un numero en una tabla"
                 + "\n Opcion 16:Aplicacion de centro educativo"
-                + "\n Opcion 17:Baraja de cartas"
-                + "\n Opcion18:Salir\n");
+                + "\n Opcion 17:Baraja de cartas\n");
         int opcion = sc.nextInt();
-        int salir = 0;
-        while (salir != 1) {
-            switch (opcion) {
-                case 1:
-                    ejercicio1(sc);
-                    break;
-                case 2:
-                    ejercicio2(sc);
-                    break;
-                case 3:
-                    ejercicio3(sc);
-                    break;
-                case 4:
-                    ejercicio4(sc);
-                    break;
-                case 5:
-                    ejercicio5(sc);
-                    break;
-                case 6:
-                    ejercicio6(sc);
-                    break;
-                case 7:
-                    ejercicio7(sc);
-                    break;
-                case 8:
-                    ejercicio8(sc);
-                    break;
-                case 9:
-                    ejercicio9(sc);
-                    break;
-                case 10:
-                    ejercicio10(sc);
-                    break;
-                case 11:
-                    ejercicio11(sc);
-                    break;
-                case 12:
-                    ejercicio12(sc);
-                    break;
-                case 13:
-                    ejercicio13(sc);
-                    break;
-                case 14:
-                    ejercicio14(sc);
-                    break;
-                case 15:
-                    ejercicio15(sc);
-                    break;
-                case 16:
-                    ejercicio16(sc);
-                    break;
-                case 17:
-                    ejercicio17(sc);
-                    break;
-                case 18:
-                    salir = 1;
-                    break;
-
-                default:
-                    System.out.println("opcion no valida");
-            }
+        switch (opcion) {
+            case 1:
+                ejercicio1(sc);
+                break;
+            case 2:
+                ejercicio2(sc);
+                break;
+            case 3:
+                ejercicio3(sc);
+                break;
+            case 4:
+                ejercicio4(sc);
+                break;
+            case 5:
+                ejercicio5(sc);
+                break;
+            case 6:
+                ejercicio6(sc);
+                break;
+            case 7:
+                ejercicio7(sc);
+                break;
+            case 8:
+                ejercicio8(sc);
+                break;
+            case 9:
+                ejercicio9(sc);
+                break;
+            case 10:
+                ejercicio10(sc);
+                break;
+            case 11:
+                ejercicio11(sc);
+                break;
+            case 12:
+                ejercicio12(sc);
+                break;
+            case 13:
+                ejercicio13(sc);
+                break;
+            case 14:
+                ejercicio14(sc);
+                break;
+            case 15:
+                ejercicio15(sc);
+                break;
+            case 16:
+                ejercicio16(sc);
+                break;
+            case 17:
+                ejercicio17(sc);
+                break;
+            default:
+                System.out.println("opcion no valida");
         }
+
     }
 
     public static void ejercicio1(Scanner sc) {
@@ -291,7 +284,7 @@ public class ErickEjerciciosArray {
         }
         numeros[posicion] = num;
         System.out.println("El nuevo orden de la tabla es:");
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 9; i++) {
             System.out.println(numeros[i]);
         }
 
@@ -417,38 +410,75 @@ public class ErickEjerciciosArray {
     }
 
     public static void ejercicio13(Scanner sc) {
+        int numeros[] = new int[10];
+        System.out.println("Introduces diez numeros a");
+        for (int i = 0; i < numeros.length; i++) {
+            numeros[i] = sc.nextInt();
+        }
+
+        System.out.println("NUMEROS PARES:");
+        for (int i = 0; i < numeros.length; i++) {
+
+            if (numeros[i] % 2 == 0) {
+
+                System.out.println("El numero par " + numeros[i]);
+
+                System.out.println("Se encuentra en la posicion " + i);
+            }
+        }
+        System.out.println("NUMEROS IMPARES:");
+        for (int i = 0; i < numeros.length; i++) {
+
+            if (numeros[i] % 2 != 0) {
+                System.out.println("El numero impar " + numeros[i]);
+                System.out.println("Se encuentra en la posicion " + i);
+            }
+        }
 
     }
 
     public static void ejercicio14(Scanner sc) {
-        int numeros1[] = new int[10];
+        int numeros[] = new int[10];
         int numeros2[] = new int[10];
-        System.out.println("Introuzca 10 numeros de manera creciente:");
-        for (int i = 0; i < numeros1.length; i++) {
-            numeros1[i] = sc.nextInt();
+        System.out.println("Introduzca los 10 numeros de la primera tabla");
+        for (int i = 0; i < numeros.length; i++) {
+
+            numeros[i] = sc.nextInt();
         }
-        System.out.println("Introuzca  otros 10 numeros de manera creciente:");
+        System.out.println("Introduzca los 10 numeros de la segunda tabla");
+
         for (int i = 0; i < numeros2.length; i++) {
+
             numeros2[i] = sc.nextInt();
         }
         int numeros3[] = new int[20];
-        for (int i = 0; i < 10; i++) {
-            if (numeros1[i] < numeros2[i]) {
-                numeros3[i + i] = numeros1[i];
-                numeros3[i + 1 + i] = numeros2[i];
+        int pri = 0, seg = 0, ter = 0;
+        for (int i = 0; pri < 10 && seg < 10; i++) {
+            if (numeros[pri] < numeros2[seg]) {
+                numeros3[ter] = numeros[pri];
+                pri++;
+            } else {
+                numeros3[ter] = numeros2[seg];
+                seg++;
             }
-            if (numeros1[i] > numeros2[i]) {
-                numeros3[i + i] = numeros2[i];
-                numeros3[i + 1 + i] = numeros1[i];
+            ter++;
+        }
+        if (pri == 10) {
+            for (int i = 0; seg < 10; i++) {
+                numeros3[ter] = numeros2[seg];
+                seg++;
+                ter++;
             }
-            if (numeros1[i] == numeros2[i]) {
-                numeros3[i + i] = numeros1[i];
-                numeros3[i + 1 + i] = numeros2[i];
+        } else {
+            for (int i = 0; seg < 10; i++) {
+                numeros3[ter] = numeros2[pri];
+                seg++;
+                ter++;
             }
         }
-        System.out.println("La tabla queda ");
-        for (int i = 0; i < numeros3.length; i++) {
-            System.out.println(numeros3[i]);
+         System.out.println("La nueva tabla es: ");
+        for (int x = 0; x < numeros3.length;x++) {
+            System.out.println( numeros3[x]);
         }
     }
 
@@ -512,13 +542,13 @@ public class ErickEjerciciosArray {
                 + "\n Media del tercer timestre:" + tercero / 5);
         System.out.print("Introduzca la posicion del alumno que quiere saber la media");
         int num = sc.nextInt();
-        if (num > 5) {
+        if (num > 4) {
             System.out.println("La posicion del alumno no existe");
-          
+
         } else {
             media = (tri1[num] + tri2[num] + tri3[num]) / 3;
             System.out.println("La media del alumno es:" + media);
-       
+
         }
     }
 
@@ -547,14 +577,16 @@ public class ErickEjerciciosArray {
         //ir sacando una a una las cartas y comparandolas a ver quien gana
         //sacar el ganador.
         int cartamen;
-        System.out.println("Eligue una carta del 1 al 10");
+        System.out.println("Eligue una posicion del 1 al 10");
 
         cartamen = sc.nextInt();
 
         if (ca2 > ca1) {
             System.out.println("Has ganado!! " + cartamen);
+            System.out.println("La batalla ha sido " + mazo[ca1] + "vs" + mazo2[ca2]);
         } else {
-            System.out.println("Has perdido:´( " + cartamen + " a ganado la maquina");
+            System.out.println("Has perdido:´( " + cartamen + " gana la maquina");
+            System.out.println("La batalla ha sido " + mazo[ca1] + "vs" + mazo2[ca2]);
         }
 
     }
@@ -574,5 +606,4 @@ public class ErickEjerciciosArray {
         }
 
     }
-
 }
