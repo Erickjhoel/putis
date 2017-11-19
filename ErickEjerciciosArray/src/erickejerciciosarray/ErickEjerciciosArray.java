@@ -421,15 +421,15 @@ public class ErickEjerciciosArray {
     }
 
     public static void ejercicio14(Scanner sc) {
-        int numeros1[]= new int[10];
-        int numeros2[]=new int[10];
+        int numeros1[] = new int[10];
+        int numeros2[] = new int[10];
         System.out.println("Introuzca 10 numeros de manera creciente:");
-        for(int i=0; i<numeros1.length;i++){
-            numeros1[i]=sc.nextInt();
+        for (int i = 0; i < numeros1.length; i++) {
+            numeros1[i] = sc.nextInt();
         }
         System.out.println("Introuzca  otros 10 numeros de manera creciente:");
-        for(int i=0; i<numeros2.length;i++){
-            numeros2[i]=sc.nextInt();
+        for (int i = 0; i < numeros2.length; i++) {
+            numeros2[i] = sc.nextInt();
         }
         int numeros3[] = new int[20];
         for (int i = 0; i < 10; i++) {
@@ -452,8 +452,7 @@ public class ErickEjerciciosArray {
         }
     }
 
-
-public static void ejercicio15(Scanner sc) {
+    public static void ejercicio15(Scanner sc) {
         int tabla[] = new int[10];
         int num;
         int posicion;
@@ -513,8 +512,14 @@ public static void ejercicio15(Scanner sc) {
                 + "\n Media del tercer timestre:" + tercero / 5);
         System.out.print("Introduzca la posicion del alumno que quiere saber la media");
         int num = sc.nextInt();
-        media = (tri1[num] + tri2[num] + tri3[num]) / 3;
-        System.out.println("La media del alumno es:" + media);
+        if (num > 5) {
+            System.out.println("La posicion del alumno no existe");
+          
+        } else {
+            media = (tri1[num] + tri2[num] + tri3[num]) / 3;
+            System.out.println("La media del alumno es:" + media);
+       
+        }
     }
 
     public static void ejercicio17(Scanner sc) {
