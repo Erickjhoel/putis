@@ -194,8 +194,6 @@ public class ErickEjerciciosArray {
         int mezcla[] = new int[20];
         for (int i = 0; i < 10; i++) {
             mezcla[i + i] = numeros1[i];
-        }
-        for (int i = 0; i < 10; i++) {
             mezcla[i + 1 + i] = numeros2[i];
         }
         //sacar por pantalla*/
@@ -253,13 +251,13 @@ public class ErickEjerciciosArray {
 
         }
 
-        if (creciente == false && decreciente == true) {
+        if (decreciente==true && creciente ==false) {
             System.out.println("Los numeros estan ordenados de manera decreciente.");
         }
-        if (creciente == true && decreciente == false) {
+        else if (creciente==true && decreciente ==false) {
             System.out.println("Los numeros estan ordenados de manera creciente");
         }
-        if (creciente == true && decreciente == true) {
+        else if (creciente==true && decreciente==true) {
             System.out.println("Los numeros están desordenados");
         }
     }
